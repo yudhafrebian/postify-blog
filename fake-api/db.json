@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Alex",
+      "lastName": "Yanto",
+      "email": "alex@gmail.com",
+      "password": "alex321"
+    },
+    {
+      "id": "001f",
+      "firstName": "Jack",
+      "lastName": "Nanda",
+      "email": "jack@gmail.com",
+      "password": "jack123"
+    },
+    {
+      "id": "22e6",
+      "firstName": "",
+      "lastName": "",
+      "email": "jack@gmail.com",
+      "password": "jack123"
+    },
+    {
+      "id": "50b9",
+      "firstName": "Johan",
+      "lastName": "Libert",
+      "email": "libert@gmail.com",
+      "password": "asd"
+    },
+    {
+      "id": "1a6b",
+      "firstName": "Johan",
+      "lastName": "Libert",
+      "email": "libert@gmail.com",
+      "password": "qwe"
+    },
+    {
+      "id": "a3b3",
+      "firstName": "Johan",
+      "lastName": "Libert",
+      "email": "libert@gmail.com",
+      "password": "qwe"
+    },
+    {
+      "id": "4dc4",
+      "firstName": "Johan",
+      "lastName": "Libert",
+      "email": "libert@gmail.com",
+      "password": "qwe"
+    },
+    {
+      "id": "191c",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "2796",
+      "firstName": "Johan",
+      "lastName": "Libert",
+      "email": "libert@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "1602",
+      "firstName": "Johan",
+      "lastName": "Libert",
+      "email": "libert@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "f667",
+      "firstName": "Yudha",
+      "lastName": "Frebian",
+      "email": "yudha@mail.com",
+      "password": "yudha123"
+    },
+    {
+      "id": "ea71",
+      "firstName": "qwer",
+      "lastName": "qwert",
+      "email": "asdq@gmail.com",
+      "password": "qwert123"
+    },
+    {
+      "id": "f895",
+      "firstName": "ss",
+      "lastName": "ss",
+      "email": "ss@mail.com",
+      "password": "Qwe123!",
+      "confirmPassword": "Qwe123!"
+    },
+    {
+      "id": "3c63",
+      "firstName": "yudha",
+      "lastName": "Frebiansyah",
+      "email": "julius_hayati@example.com",
+      "password": "Qwer123!",
+      "confirmPassword": "Qwer123!"
+    },
+    {
+      "id": "bea8",
+      "firstName": "yudha",
+      "lastName": "Frebiansyah",
+      "email": "julius_hayati@example.com",
+      "password": "Yudha123!",
+      "confirmPassword": "Yudha123!"
+    }
+  ]
+}
