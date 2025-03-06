@@ -39,6 +39,7 @@ const MyPostSection = () => {
           email={feed.userData.email}
           message={feed.message}
           createdDate={feed.created}
+          profilePic={feed.userData.profilePic}
         />
       ))
     ) : (

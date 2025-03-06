@@ -24,7 +24,7 @@ const AuthSlice = createSlice({
             console.log("Check Action SignIn", action)
             return action.payload
         },
-        setLogout: (state) => {
+        setLogout: () => {
             return initialState
         }
     }

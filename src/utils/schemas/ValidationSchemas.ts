@@ -1,4 +1,4 @@
-import { title } from "process";
+
 import * as Yup from "yup";
 
 export const SignUpSchema = Yup.object().shape({

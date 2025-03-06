@@ -1,7 +1,7 @@
 import { useAppDispatch } from '@/app/hook';
 import { setFormType } from '@/utils/redux/feature/formSlice';
 import { Button } from '@heroui/button';
-import { CardBody, CardHeader } from '@heroui/card';
+import { CardBody } from '@heroui/card';
 import Link from 'next/link';
 import * as React from 'react';
 
