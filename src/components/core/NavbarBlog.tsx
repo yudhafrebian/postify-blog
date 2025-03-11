@@ -39,7 +39,7 @@ const NavbarBlog = () => {
 
   const saveAuth = async () => {
     try {
-      const auth = localStorage.getItem("auth");
+      const auth = window.localStorage.getItem("auth");
 
       if (auth) {
         const query = encodeURIComponent(`objectId='${auth}'`);
@@ -63,7 +63,7 @@ const NavbarBlog = () => {
 
   const handleLogout = () => {
     dispatch(setLogout());
-    localStorage.removeItem("auth");
+    window.localStorage.removeItem("auth");
     router.replace("/");
     onclose;
   };

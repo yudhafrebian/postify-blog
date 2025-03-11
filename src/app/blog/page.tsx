@@ -33,7 +33,7 @@ const BlogPage = () => {
 
   const printUserList = () => {
     const filterUser = userList.filter(
-      (user) => user.objectId !== localStorage.getItem("auth")
+      (user) => user.objectId !== window.localStorage.getItem("auth")
     );
 
     if (filterUser.length > 0) {

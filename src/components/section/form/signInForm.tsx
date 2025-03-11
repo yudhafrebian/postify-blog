@@ -48,7 +48,7 @@ const SignInForm = () => {
           })
         );
 
-        localStorage.setItem("auth", response.data[0].objectId);
+        window.localStorage.setItem("auth", response.data[0].objectId);
         router.replace("/blog");
       }
     } catch (error) {

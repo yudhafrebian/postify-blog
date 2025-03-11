@@ -38,7 +38,7 @@ const HomeSection = () => {
         message: values.postMessage,
       });
       console.log("cek penambahan data post", response.data);
-      const userId = localStorage.getItem("auth");
+      const userId = window.localStorage.getItem("auth");
       const postId = response.data.objectId;
 
       const resUserToPost = await apiCall.put(`/user/${userId}/postList`, {

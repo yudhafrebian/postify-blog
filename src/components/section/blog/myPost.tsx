@@ -27,7 +27,7 @@ const MyPostSection = () => {
 
   const printFeed = () => {
     const sortedFeed = [...myFeeds].sort((a, b) => b.created - a.created);
-    const filterFeed = sortedFeed.filter((feed) => feed.userData.objectId === localStorage.getItem("auth"));
+    const filterFeed = sortedFeed.filter((feed) => feed.userData.objectId === window.localStorage.getItem("auth"));
     console.log(filterFeed);
     return filterFeed.length > 0 ? (
       filterFeed.map((feed) => (

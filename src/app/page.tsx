@@ -12,9 +12,10 @@ import { Image } from "@heroui/react";
 export default function Home() {
   // const [formData, setFormData] = useState<IForm[]>([])
   const formType = useSelector((state: RootState) => state.formState.formtype);
-  const auth = localStorage.getItem("auth");
+  
   const router = useRouter();
   useEffect(() => {
+    const auth = window.localStorage.getItem("auth");
     if (auth) {
       router.replace("/blog");
     } else {

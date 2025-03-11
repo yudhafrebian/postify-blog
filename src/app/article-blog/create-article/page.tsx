@@ -40,7 +40,7 @@ const CreateArticle = () => {
       });
       console.log("cek penambahan data article", response.data);
 
-      const authorId = localStorage.getItem("auth");
+      const authorId = window.localStorage.getItem("auth");
       const articleId = response.data.objectId;
 
       await apiCall.put(`/user/${authorId}/articleList`, {

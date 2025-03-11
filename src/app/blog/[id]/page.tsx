@@ -36,8 +36,13 @@ const getDetailPost = async (id: string) => {
   }
 };
 
-const DetailPost: React.FunctionComponent<IDetailPostProps> = async (props) => {
-  const post: IPost = await getDetailPost(props.params.id);
+const DetailPost = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const id = (await params).id;
+  const post: IPost = await getDetailPost(id);
   return (
     <div className="">
       <Button as={Link} href="/blog" className="w-16 mt-5 ml-10" variant="ghost" color="primary" size="sm" >Back</Button>

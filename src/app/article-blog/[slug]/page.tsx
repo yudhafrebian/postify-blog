@@ -7,7 +7,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 
 interface IDetailArticleProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 // note : interface untuk detail harus sama dengan interface di database
@@ -19,7 +19,12 @@ interface IArticle {
   thumbnailURL: string;
   category: string;
   created: string;
-  authorData: { firstName: string; lastName: string; email: string; profilePic: string; };
+  authorData: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    profilePic: string;
+  };
 }
 const getArticleDetail = async (slug: string) => {
   try {
@@ -34,15 +39,27 @@ const getArticleDetail = async (slug: string) => {
   }
 };
 
-const DetailArticle: React.FunctionComponent<IDetailArticleProps> = async (
-  props
-) => {
-  const article: IArticle = await getArticleDetail(props.params.slug);
+const DetailArticle = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const slug = (await params).slug;
+  const article: IArticle = await getArticleDetail(slug);
   console.log(article);
   return (
     <div className="h-screen bg-slate-50 p-10">
       <Card className="py-10 px-20">
-        <Button as={Link} href="/article-blog" className="w-16" variant="ghost" color="primary" size="sm" >Back</Button>
+        <Button
+          as={Link}
+          href="/article-blog"
+          className="w-16"
+          variant="ghost"
+          color="primary"
+          size="sm"
+        >
+          Back
+        </Button>
         <CardHeader className="flex flex-col gap-5">
           <h1 className=" text-3xl font-bold text-black">{article.title}</h1>
           <p className="text-md font-medium text-center text-neutral-500 w-3/4">

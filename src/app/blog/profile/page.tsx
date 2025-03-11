@@ -33,7 +33,7 @@ const ProfilePage = () => {
 
 const saveAuth = async () => {
     try {
-      const auth = localStorage.getItem("auth");
+      const auth = window.localStorage.getItem("auth");
 
       if (auth) {
         const query = encodeURIComponent(`objectId='${auth}'`);
@@ -57,7 +57,7 @@ const saveAuth = async () => {
 
   const onUpdateBtn = async (values: any) => {
     try {
-      const auth = localStorage.getItem("auth");
+      const auth = window.localStorage.getItem("auth");
       const response = await apiCall.put(`/user/${auth}`, {
         profilePic: values.profilePic,
       });
