@@ -20,6 +20,7 @@ interface IPost {
     firstName: string;
     lastName: string;
     email: string;
+    profilePic: string;
   };
 }
 
@@ -51,6 +52,7 @@ const DetailPost = async ({
           <div className="flex items-center gap-3 text-black">
             <User
               avatarProps={{
+                src: post.userData.profilePic,
                 name: post.userData.firstName,
                 color: "secondary",
               }}
