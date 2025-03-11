@@ -38,7 +38,7 @@ interface IArticle {
 const ArticlePage = () => {
   const [articles, setArticles] = useState<any[]>([]);
   const [filter, setFilter] = useState<string>("All");
-  // const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [open, setOpen] = useState(false);
 
   const onOpenModal = () => setOpen(true);
@@ -92,6 +92,12 @@ const ArticlePage = () => {
         (article) => article.category === "Science"
       );
     }
+    if (searchQuery.trim() !== "") {
+      filteredArticles = filteredArticles.filter((article) =>
+        article.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
     return filteredArticles.length > 0 ? (
       filteredArticles.map((article) => (
         <ArticleCard
@@ -120,17 +126,19 @@ const ArticlePage = () => {
   return (
     <div className="flex flex-col items-center h-full min-h-screen bg-slate-50 gap-10 p-10">
       <Card className="flex flex-col gap-5 p-10">
-        <CardHeader className="flex gap-8 justify-between">
-          <div className="w-1/2 text-black">
-            <h1 className="text-4xl font-bold">Discover Nice Article Here</h1>
-            <p className="text-md text-neutral-500 font-light mt-6">
+        <CardHeader className="flex md:flex-row flex-col-reverse gap-8 justify-between">
+          <div className="md:w-1/2 text-black">
+            <h1 className="text-xl md:text-4xl font-bold">
+              Discover Nice Article Here
+            </h1>
+            <p className="text-sm md:text-base text-neutral-500 font-light mt-6">
               Discover inspiration and valuable insights here! Explore
               high-quality articles covering various topics, from technology and
               business to lifestyle. Start writing and share your creative ideas
               with the world!
             </p>
           </div>
-          <div>
+          <div className="">
             <Image
               isZoomed
               src="https://heroui.com/images/hero-card-complete.jpeg"
@@ -139,9 +147,9 @@ const ArticlePage = () => {
             />
           </div>
         </CardHeader>
-        <CardBody className="flex flex-row items-start justify-between">
+        <CardBody className="flex flex-col-reverse md:flex-row items-start gap-4 justify-between">
           <Input
-            className="w-1/2"
+            className="md:w-1/2"
             classNames={{
               input: [
                 "text-black",
@@ -152,14 +160,21 @@ const ArticlePage = () => {
             placeholder="Search your favorite article..."
             variant="bordered"
             startContent={<IoSearchOutline color="black" />}
-            
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <div className="flex flex-col gap-4">
-            <p className="text-sm text-neutral-500">
+            <p className="md:text-sm text-xs text-neutral-500">
               Start writing your own articles and inspire others with your ideas
               today!
             </p>
-            <Button onPress={onOpenModal} variant="ghost" color="primary" radius="full" className="w-1/2 mx-auto">
+            <Button
+              onPress={onOpenModal}
+              variant="ghost"
+              color="primary"
+              radius="full"
+              className="md:w-1/2 mx-auto"
+            >
               Create An Article
             </Button>
             <Modal
@@ -173,7 +188,7 @@ const ArticlePage = () => {
           </div>
         </CardBody>
       </Card>
-      <div className="flex gap-5 text-neutral-700">
+      <div className="md:flex grid grid-cols-2 gap-5 text-neutral-700">
         {[
           "All",
           "Technology",
@@ -186,7 +201,7 @@ const ArticlePage = () => {
         ].map((type) => (
           <Button
             className={
-              type === filter ? "bg-primary text-white" : "text-neutral-600"
+              type === filter ? "bg-primary text-white" : "text-neutral-600 "
             }
             key={type}
             variant={type === filter ? "solid" : "light"}
@@ -200,7 +215,9 @@ const ArticlePage = () => {
       </div>
 
       <Divider />
-      <div className="grid grid-cols-4 gap-4">{printArticles()}</div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {printArticles()}
+      </div>
     </div>
   );
 };

@@ -44,9 +44,9 @@ const DetailPost = async ({
   const id = (await params).id;
   const post: IPost = await getDetailPost(id);
   return (
-    <div className="">
-      <Button as={Link} href="/blog" className="w-16 mt-5 ml-10" variant="ghost" color="primary" size="sm" >Back</Button>
-      <Card className="w-1/2 m-auto mt-10">
+    <div className="p-5">
+      <Button as={Link} href="/blog" className="w-16 mt-5 ml-4" variant="ghost" color="primary" size="sm" >Back</Button>
+      <Card className="md:w-1/2 m-auto mt-4 md:mt-10">
         <CardHeader>
           <div className="flex items-center gap-3 text-black">
             <User

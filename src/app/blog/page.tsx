@@ -58,12 +58,12 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <div className="h-full min-h-screen bg-slate-50 flex gap-10 p-10">
+    <div className="h-full min-h-screen bg-slate-50 flex md:flex-row flex-col gap-10 p-5 md:p-10">
       <SideBar />
       {sectionType === "home" && <HomeSection />}
       {sectionType === "my-post" && <MyPostPage />}
 
-      <div className="flex flex-col gap-3 fixed right-10">
+      <div className="md:flex flex-col gap-3 fixed right-10 hidden">
         <h1 className="text-md text-neutral-500">User List</h1>
         {printUserList()}
       </div>

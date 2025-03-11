@@ -9,11 +9,10 @@ import { useAppDispatch } from "@/app/hook";
 import { setSectionType } from "@/utils/redux/feature/sectionSlice";
 
 const Sidebar = () => {
-  const pathname = usePathname();
   const dispatch = useAppDispatch();
 
   return (
-    <Card className="w-60 left-6 fixed font-bold text-black">
+    <Card className="w-60 left-6 fixed font-bold text-black md:block hidden">
       <CardBody className="px-5 flex flex-col gap-2">
         <Button
           variant="light"

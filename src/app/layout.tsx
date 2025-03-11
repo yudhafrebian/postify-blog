@@ -5,6 +5,7 @@ import Navbar from "@/components/core/NavbarBlog";
 import StoreProvider from "./StoreProvider";
 import {ToastContainer} from "react-toastify"
 import {ToastProvider} from "@heroui/toast";
+import BottomNavbar from "@/components/core/BottomNavbar";
 
 
 const inter = Inter({

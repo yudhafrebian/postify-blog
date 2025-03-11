@@ -25,18 +25,18 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex h-screen justify-evenly items-center bg-gradient-to-r from-secondary-300 to-primary-500">
-        <div className="flex flex-col items-center w-1/2">
-          <h1 className="text-center text-white text-2xl font-bold mb-8 w-3/4">
+      <div className="flex md:flex-row flex-col h-screen md:justify-evenly justify-center items-center bg-gradient-to-r from-secondary-300 to-primary-500 p-5">
+        <div className="flex flex-col items-center md:w-1/2">
+          <h1 className="text-center text-white text-lg md:text-2xl font-bold mb-8 md:w-3/4">
           Welcome to POSTIFY – Your Space to Share, Connect, and Inspire.
           </h1>
           <Image
-          className="mx-auto"
+          className="mx-auto md:block hidden"
             width={400}
             src="https://plus.unsplash.com/premium_photo-1661481518168-fe8dba18120b?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </div>
-        <Card className="w-2/5 p-4">
+        <Card className="md:w-2/5 p-4">
           {formType === "signup" && <SignUpForm />}
           {formType === "signin" && <SignInForm />}
           {formType === "signup-success" && <SignUpSuccess />}

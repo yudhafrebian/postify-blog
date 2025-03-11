@@ -75,8 +75,8 @@ const saveAuth = async () => {
   };
 
   return (
-    <div>
-      <Card className="w-1/2 m-auto mt-16">
+    <div className="p-5">
+      <Card className="md:w-1/2 m-auto mt-16">
         <CardHeader>
         <h1 className="font-bold text-xl">Profile</h1>
         </CardHeader>

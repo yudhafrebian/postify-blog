@@ -48,12 +48,12 @@ const DetailArticle = async ({
   const article: IArticle = await getArticleDetail(slug);
   console.log(article);
   return (
-    <div className="h-screen bg-slate-50 p-10">
-      <Card className="py-10 px-20">
+    <div className="h-screen bg-slate-50 p-5 md:p-10">
+      <Card className="md:py-10 md:px-20">
         <Button
           as={Link}
           href="/article-blog"
-          className="w-16"
+          className="w-16 ml-3 mt-5"
           variant="ghost"
           color="primary"
           size="sm"
@@ -61,18 +61,18 @@ const DetailArticle = async ({
           Back
         </Button>
         <CardHeader className="flex flex-col gap-5">
-          <h1 className=" text-3xl font-bold text-black">{article.title}</h1>
-          <p className="text-md font-medium text-center text-neutral-500 w-3/4">
+          <h1 className="text-lg md:text-3xl font-bold text-black">{article.title}</h1>
+          <p className="text-sm md:text-base font-medium text-center text-neutral-500 w-[90%] md:w-3/4">
             {article.description}
           </p>
           <div className="flex gap-3 items-center">
-            <p className="text-md italic font-light">Article ~ </p>
+            <p className="text-sm md:text-base italic font-light">Article ~ </p>
             <Chip variant="bordered" color="primary" size="sm">
               {article.category}
             </Chip>
           </div>
           <Divider />
-          <div className="w-1/2 mt-6">
+          <div className="md:w-1/2 mt-6">
             <Image
               className="object-cover"
               width={1000}
@@ -81,7 +81,7 @@ const DetailArticle = async ({
             />
           </div>
         </CardHeader>
-        <CardBody>
+        <CardBody className="text-sm md:text-base">
           {parse(article.content)}
           <p className="text-sm text-zinc-500/50 mt-10 text-right">
             Posted at {format(new Date(article.created), "dd MMMM yyy")}
@@ -90,8 +90,8 @@ const DetailArticle = async ({
         <Divider />
         <CardFooter className="flex flex-col gap-5">
           <div>
-            <h1 className="text-black text-lg font-semibold">Blog History</h1>
-            <p className="text-sm font-light">
+            <h1 className="text-black md:text-lg font-semibold">Blog History</h1>
+            <p className="text-xs md:text-sm font-light">
               Our culinary blog began as a simple space to share recipes and
               cooking tips, driven by a passion for food and storytelling. Over
               time, it evolved into a platform for restaurant reviews, food
@@ -113,7 +113,7 @@ const DetailArticle = async ({
               name={`${article.authorData.firstName} ${article.authorData.lastName}`}
               description={article.authorData.email}
             />
-            <p className="text-sm font-light italic w-1/2">
+            <p className="text-sm font-light italic md:w-1/2">
               "I am a passionate writer and creative thinker with a deep
               interest in storytelling and digital media. With a background in
               content creation and journalism, I enjoy exploring new ideas,

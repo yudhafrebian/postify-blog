@@ -21,16 +21,16 @@ const ArticleCard: React.FunctionComponent<IArticleCardProps> = (props) => {
   return (
     <Card className="w-full">
       <CardHeader className="w-full">
-        <Image className="object-cover mx-auto" width={320} height={200} isZoomed src={props.thumbnailURL} alt="Gambar" />
+        <Image className="object-cover mx-auto w-80 h-[200px]" isZoomed src={props.thumbnailURL} alt="Gambar" />
       </CardHeader>
       <CardBody>
         <div className="flex justify-between mb-3">
-          <p className="font-bold text-black text-md">{props.title}</p>
+          <p className="font-bold text-black text-sm md:text-base">{props.title}</p>
           <Chip size="sm" color="primary" variant="bordered">
             {props.category}
           </Chip>
         </div>
-        <p className="overflow-hidden text-ellipsis line-clamp-3 font-light text-neutral-600 text-sm">
+        <p className="overflow-hidden text-ellipsis line-clamp-3 font-light text-neutral-600 text-xs md:text-sm">
           {props.description}
         </p>
       </CardBody>

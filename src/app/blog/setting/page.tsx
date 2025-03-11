@@ -14,8 +14,8 @@ const SettingPage = () => {
   ]
 
   return (
-    <div>
-      <Card className="w-1/3 m-auto mt-16">
+    <div className="p-5">
+      <Card className="md:w-1/3 m-auto mt-16">
         <CardHeader>
           <h1 className="font-bold text-xl">Setting</h1>
         </CardHeader>

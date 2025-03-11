@@ -2,7 +2,7 @@
 
 import { User } from "@heroui/user";
 import { setFormType } from "@/utils/redux/feature/formSlice";
-import { Button } from "@heroui/button";
+import {Button} from "@heroui/button";
 import { useAppDispatch, useAppSelector } from "@/app/hook";
 import { usePathname, useRouter } from "next/navigation";
 import {
@@ -22,14 +22,13 @@ import {
   ModalFooter,
   useDisclosure,
   Image,
-  Avatar,
 } from "@heroui/react";
 import Link from "next/link";
 import { CiEdit } from "react-icons/ci";
 import { FiBookOpen } from "react-icons/fi";
 import { FaChevronDown } from "react-icons/fa";
 
-const NavbarBlog = () => {
+const BottomNavbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -96,12 +95,10 @@ const NavbarBlog = () => {
             "data-[active=true]:after:bg-primary",
           ],
         }}
+        className=" bottom-0 md:hidden"
       >
         <NavbarBrand>
-          <Image
-            width={70}
-            src="https://api.logo.com/api/v2/images?design=lg_lRJBrVIhCSMxCzwiOa&u=278c25607d045a8f1fe787401d74e74917fd9eebf61b2e62d8a2725a6940e389&width=500&height=400&margins=100&fit=contain&format=webp&quality=60&tightBounds=true"
-          />
+          <Image width={70} src="https://api.logo.com/api/v2/images?design=lg_lRJBrVIhCSMxCzwiOa&u=278c25607d045a8f1fe787401d74e74917fd9eebf61b2e62d8a2725a6940e389&width=500&height=400&margins=100&fit=contain&format=webp&quality=60&tightBounds=true" />
         </NavbarBrand>
         <NavbarContent justify="center">
           {auth.email ? (
@@ -169,20 +166,17 @@ const NavbarBlog = () => {
             <div className="flex  items-center gap-3">
               <Dropdown>
                 <DropdownTrigger>
-                  <div>
-                    <Avatar className="md:hidden block cursor-pointer" src={auth.profilePic} name={auth.firstName} color="secondary"/>
-                    <User
-                      className="md:flex flex-row-reverse hidden text-black cursor-pointer"
-                      avatarProps={{
-                        src: auth.profilePic,
-                        name: auth.firstName,
-                        color: "secondary",
-                      }}
-                      isFocusable
-                      name={`${auth.firstName} ${auth.lastName}`}
-                      description={auth.email}
-                    />
-                  </div>
+                  <User
+                    className="flex flex-row-reverse text-black cursor-pointer"
+                    avatarProps={{
+                      src: auth.profilePic,
+                      name: auth.firstName,
+                      color: "secondary",
+                    }}
+                    isFocusable
+                    name={`${auth.firstName} ${auth.lastName}`}
+                    description={auth.email}
+                  />
                 </DropdownTrigger>
                 <DropdownMenu>
                   <DropdownItem
@@ -263,4 +257,4 @@ const NavbarBlog = () => {
   );
 };
 
-export default NavbarBlog;
+export default BottomNavbar;

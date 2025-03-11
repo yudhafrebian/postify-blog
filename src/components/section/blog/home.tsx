@@ -87,7 +87,7 @@ const HomeSection = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-5 w-1/2 mx-auto">
+    <div className="flex flex-col gap-5 md:w-1/2 mx-auto">
       <div className=" gap-3 w-full">
         <Card>
           <CardBody>
